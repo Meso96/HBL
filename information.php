@@ -1,19 +1,21 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>De Bijlesjuf</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" href="./css/bootstrap1.css">
-     <link rel="shortcut icon" href="./foto/logosonnega.ico">
-  <script src="./js/javascript.js"></script>
-  <script src="./js/javascript1.js"></script>
-
+   <?php include('build/head.php');?>
 </head>
 <body>
+<?php
+      if(!isset($_SESSION['admin'])){ // If session is not set that redirect to Login Page
+          include('build/navbar.php');
+           //header("Location:information.php");  
+       } else {
+          include('build/navbarlogout.php');
+      }
+?>
 
-<?php include('build/navbar.php'); ?>
 
 
   <div class="row">
@@ -48,7 +50,34 @@ Het uurtarief is euro 25, 00 ( na 4 lessen factuur)
 <ul><br>Voor wie ?
 <li>basischoolleerlingen</li>
 <li>kinderen met dyslexie</li>
-     </ul>
+     </ul><br>
+    <h3>Beschikbaarheid van “De Bijlesjuf“</h3>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Dag</th>
+        <th>Tijd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Maandag</td>
+        <td>15.30 - 17.30</td>
+      </tr>
+        <tr>
+  <td>Dinsdag</td>
+  <td>15.30 - 17.30</td>
+</tr>
+        <tr>
+  <td>Woensdag</td>
+  <td>15.30 - 17.30</td>
+</tr>
+        <tr>
+  <td>Donderdag</td>
+  <td>15.30 - 17.30</td>
+</tr>
+    </tbody>
+  </table>
     </div>
       <div class="col-md-4"><!--Rechter kant--></div> 
   </div>
