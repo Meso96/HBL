@@ -3,16 +3,28 @@
       margin-bottom: 0;
       border-radius: 0;
       border: 0;
-      background-color: #82422D;
+      background-color: /*#82422D #fc20df; */ #286F99;
       color: #FFFFFF;
+      font-weight: bold;
+   }
+   
+   .navbar-inverse .navbar-nav .active a {
+   		background-color: #FF9609;!important   		
+   }
+   
+   .navbar-inverse .navbar-nav .active a:hover {
+   		background-color: #FF9609;!important
    }
    
    .navbar-inverse .navbar-nav li a {
    		color: #FFF;
+   		letter-spacing: 1px;
+   		font-size: 16px;
    }
    
    .navbar-inverse .navbar-nav li a:hover {
-   		box-shadow: 0px 0px 10px #FFF;   		
+   		
+   		background-color: #FF9609;   		
    }
    
    .navbar-inverse .navbar-brand {
@@ -33,10 +45,35 @@
         height: 30px;
     }
     
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      max-height: 500px;
-      
+
+.carousel.slide{
+    width:100%;
+    height:500px;
+    overflow:hidden;
+}
+.item{
+    position:relative;
+    height:100%;
+}
+
+.item img{
+	width: 100%;		
+}
+
+  .carousel-inner{
+      /* Set width to 100%  max-height: 500px;*/
+      width:100%;
+      max-height:500px;
+}
+
+  .carousel-control.left, .carousel-control.right{
+      background-color: #f1f1f1;
+      opacity:0;
+      width:15%;
+  }
+  .carousel-control:hover{
+      background-color: #f1f1f1;
+      opacity:0.25;
   }
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -51,4 +88,22 @@
 }
 .error {
     color:red;
+}
+
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+ 
+.responsive-iframe-container iframe,   
+.vresponsive-iframe-container object,  
+.vresponsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
