@@ -3,7 +3,7 @@ if(empty($_SESSION['user']['role'])) {
 	$_SESSION['user']['role'] = 'gast';
 }
 ?>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -23,13 +23,16 @@ if(empty($_SESSION['user']['role'])) {
 
                 <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind'){ ?>
       	        <li <?php if($file == 'calendar'){?> class="active" <?php } ?>><a href="calendar.php">Agenda</a></li>
+      	         <li <?php if($file == 'download'){?> class="active" <?php } ?>><a href="download.php">Downloads</a></li>
+                <li <?php if($file == 'question'){?> class="active" <?php } ?>><a href="question.php">Vragen</a></li>
+
       	        <?php } ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
       	        <?php if($_SESSION['user']['role'] == 'Ouder' || $_SESSION['user']['role'] == 'Kind' || $_SESSION['user']['role'] == 'admin') { ?>
-      	        <li><a href="logout.php"><span class="glyphicon glyphicon-ok"></span> U bent ingelogd, log hier uit</a></li>
+      	        <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Uitloggen</a></li>
       	        <?php } else { ?>
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                 <?php } ?>
                 
                 
